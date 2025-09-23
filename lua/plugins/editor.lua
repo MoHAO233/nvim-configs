@@ -6,7 +6,11 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    opts = {},
+    opts = {
+      git = {
+        enable = false,
+      },
+    },
   },
   {
     "folke/which-key.nvim",
