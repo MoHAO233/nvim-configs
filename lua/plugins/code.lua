@@ -20,4 +20,22 @@ return {
       })
     end,
   },
+  {
+    'xeluxee/competitest.nvim',
+    dependencies = 'MunifTanjim/nui.nvim',
+    opts = {
+      compile_command = {
+        cpp = {
+          exec = "g++-15",
+          args = {
+            "-Wall",
+            "$(FNAME)",
+            "-o",
+            "$(FNOEXT)",
+            "-std=gnu++23",
+          }
+        }
+      }
+    },
+  },
 }
