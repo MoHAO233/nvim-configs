@@ -5,5 +5,3 @@ o.expandtab = true
 o.autoindent = true
 o.number = true
 o.relativenumber = true
-
-vim.cmd[[colorscheme unokai]]
