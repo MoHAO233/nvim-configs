@@ -43,6 +43,7 @@ return {
   },
   {
     "mistricky/codesnap.nvim",
+    enabled = not vim.fn.stdpath("config"):find("com.termux"),
     build = "make",
     opts = {
       watermark = "",
