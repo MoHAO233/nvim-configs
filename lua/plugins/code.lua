@@ -49,4 +49,44 @@ return {
       watermark = "",
     }
   },
+  -- 自动补全核心
+  {
+    "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp", -- LSP source
+      "hrsh7th/cmp-buffer",   -- buffer words
+      "hrsh7th/cmp-path",     -- filesystem paths
+      "L3MON4D3/LuaSnip",     -- snippets engine（nvim-cmp 依赖）
+    },
+    config = function()
+      local cmp = require("cmp")
+      cmp.setup({
+        mapping = cmp.mapping.preset.insert({
+          ["<C-Space>"] = cmp.mapping.complete(),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        }),
+        sources = cmp.config.sources({
+          { name = "nvim_lsp" },
+          { name = "buffer" },
+          { name = "path" },
+        }),
+      })
+    end,
+  },
+
+  -- LSP 配置
+  {
+    "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+      vim.lsp.config["clangd"] = {
+        capabilities = capabilities,
+      }
+      vim.lsp.enable("clangd")
+    end,
+  },
 }
+
