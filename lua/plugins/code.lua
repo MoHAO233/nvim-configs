@@ -24,6 +24,9 @@ return {
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
     opts = {
+      template_file = {
+        cpp = "~/Code/.template.cpp",
+      },
       compile_command = {
         cpp = {
           exec = "g++-15",
