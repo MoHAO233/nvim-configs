@@ -4,7 +4,7 @@ opts = {
   noremap = true,
 }
 k.set("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-k.set("n", "<leader>t", ":CompetiTest run<CR>", opts)
+k.set("n", "<leader>r", ":CompetiTest run<CR>", opts)
 k.set("n", "<C-h>", "<C-w>h", opts)
 k.set("n", "<C-j>", "<C-w>j", opts)
 k.set("n", "<C-k>", "<C-w>k", opts)
