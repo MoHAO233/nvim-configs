@@ -5,3 +5,4 @@ o.expandtab = true
 o.autoindent = true
 o.number = true
 o.relativenumber = true
+o.signcolumn = "yes"
